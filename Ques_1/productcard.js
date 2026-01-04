@@ -1,20 +1,16 @@
 function ProductCard({ product, addToCart }) {
+  const outOfStock = product.stock === 0;
+
   return (
     <div className="card">
       <h3>{product.title}</h3>
-      <p><strong>₹ {product.price}</strong></p>
-      <p>Category: {product.category}</p>
-
-      <p
-        className={product.inStock ? "stock in" : "stock out"}
-      >
-        {product.inStock ? "In Stock" : "Out of Stock"}
+      <p>₹ {product.price}</p>
+      <p>{product.category}</p>
+      <p className={outOfStock ? "out" : "in"}>
+        {outOfStock ? "Out of stock" : `In stock (${product.stock})`}
       </p>
 
-      <button
-        disabled={!product.inStock}
-        onClick={() => addToCart(product)}
-      >
+      <button disabled={outOfStock} onClick={() => addToCart(product)}>
         Add to Cart
       </button>
     </div>

@@ -1,41 +1,26 @@
 .app {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
 }
 
-.product-grid {
+.filters, .cart {
+  margin-bottom: 20px;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 15px;
 }
 
 .card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-.stock.in {
-  color: green;
-}
-
-.stock.out {
-  color: red;
-}
+.in { color: green; }
+.out { color: red; }
 
 button {
-  margin-top: 10px;
-  padding: 8px;
-  cursor: pointer;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.cart {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
+  margin: 5px;
 }
